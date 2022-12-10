@@ -9,6 +9,9 @@ function App() {
     <Wrapper>
       <Header score={score} />
       <Game />
+      <Rules>
+        <ButtonText>rules</ButtonText>
+      </Rules>
     </Wrapper>
   );
 }
@@ -28,4 +31,22 @@ const Wrapper = styled.div`
     #1f3757 0%,
     #131537 100%
   );
+`;
+
+const Rules = styled.button`
+  width: 128px;
+  height: 48px;
+  border: 1px solid white;
+  background-color: transparent;
+  margin-top: auto;
+  border-radius: 8px;
+`;
+
+const ButtonText = styled.span`
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+  color: white;
 `;

@@ -1,6 +1,6 @@
 import { Pentagon } from "images";
 import styled from "styled-components";
-import { Scissors } from "svg";
+import { Lizard, Paper, Rock, Scissors, Spock } from "svg";
 import { GameCard } from "types";
 import Card from "./Card";
 
@@ -9,12 +9,48 @@ const Game = () => {
     name: "scissors",
     image: <Scissors />,
     colorTop: "#EB9F0E",
-    colorBottom: "#C76C1B;",
+    colorBottom: "#C76C1B",
   };
+
+  const spock: GameCard = {
+    name: "spock",
+    image: <Spock />,
+    colorTop: "#3FB7CD",
+    colorBottom: "#2D8DAB",
+  };
+
+  const paper: GameCard = {
+    name: "paper",
+    image: <Paper />,
+    colorTop: "#4664F4",
+    colorBottom: "#2A45C2",
+  };
+
+  const lizard: GameCard = {
+    name: "lizard",
+    image: <Lizard />,
+    colorTop: "#834EE3",
+    colorBottom: "#5F37A8",
+  };
+
+  const rock: GameCard = {
+    name: "rock",
+    image: <Rock />,
+    colorTop: "#DB2E4D",
+    colorBottom: "#9D1634",
+  };
+
   return (
     <GameBox>
       <Card item={scissors} />
-      <Middle></Middle>
+      <Middle>
+        <Card item={spock} />
+        <Card item={paper} />
+      </Middle>
+      <Bottom>
+        <Card item={lizard} />
+        <Card item={rock} />
+      </Bottom>
     </GameBox>
   );
 };
@@ -30,6 +66,7 @@ const GameBox = styled.div`
   background: url(${Pentagon});
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 227px 227px;
 `;
 
 const Middle = styled.div`
@@ -37,4 +74,14 @@ const Middle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: -11px;
+`;
+
+const Bottom = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 33px;
+  margin-top: 26px;
 `;

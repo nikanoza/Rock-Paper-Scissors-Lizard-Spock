@@ -20,7 +20,6 @@ const attrs = styled.svg.attrs({
 const Svg = styled(attrs)`
   width: 45px;
   height: 59px;
-  cursor: pointer;
   transform: scale(0.7);
   @media (min-width: 768px) {
     transform: scale(1);
