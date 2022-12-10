@@ -6,3 +6,5 @@ export type GameCard = {
   colorTop: string;
   colorBottom: string;
 };
+
+export type Choice = "scissors" | "spock" | "paper" | "lizard" | "rock" | "";

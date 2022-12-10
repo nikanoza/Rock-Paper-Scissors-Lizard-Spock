@@ -67,6 +67,11 @@ const GameBox = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: 227px 227px;
+  @media (min-width: 768px) {
+    margin-top: 48px;
+    width: 472px;
+    background-size: 345px 345px;
+  } ;
 `;
 
 const Middle = styled.div`

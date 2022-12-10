@@ -29,6 +29,10 @@ const CardBox = styled.div(
     &:hover path {
       fill: ${props.hover};
     };
+    @media (min-width: 768px){
+      width: 145px;
+      height: 148px;
+    };
 `
 );
 
@@ -39,6 +43,9 @@ const MainCircle = styled(CardBox)(
     display: flex;
     justify-content:center;
     align-items: center;
+    @media (min-width: 768px){
+      height: 141.44px;
+    };
 `
 );
 
@@ -49,6 +56,10 @@ const GrayCircle = styled.div`
   background-color: #babfd4;
   margin-top: 1px;
   display: flex;
+  @media (min-width: 768px) {
+    width: 112px;
+    height: 112px;
+  } ;
 `;
 
 const WhiteCircle = styled.div`
@@ -60,4 +71,7 @@ const WhiteCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: 768px) {
+    height: 104px;
+  } ;
 `;

@@ -1,15 +1,17 @@
-import { Game, Header, Rules } from "components";
+import { Game, Header, Rules, Versus } from "components";
 import { useState } from "react";
 import styled from "styled-components";
+import { Choice } from "types";
 
 function App() {
   const [score, setScore] = useState<number>(0);
   const [showRules, setShowRules] = useState<boolean>(false);
+  const [userChoice, setUserChoice] = useState<Choice>("");
 
   return (
     <Wrapper>
       <Header score={score} />
-      <Game />
+      {userChoice !== "" ? <Versus /> : <Game />}
       <RulesBtn
         onClick={() => {
           setShowRules(true);
@@ -52,6 +54,9 @@ const RulesBtn = styled.button`
   }
   &:hover span {
     color: #3b4262;
+  }
+  @media (min-width: 768px) {
+    margin-left: auto;
   }
 `;
 
