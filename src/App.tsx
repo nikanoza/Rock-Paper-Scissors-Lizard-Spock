@@ -1,4 +1,4 @@
-import { Header } from "components";
+import { Game, Header } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -8,6 +8,7 @@ function App() {
   return (
     <Wrapper>
       <Header score={score} />
+      <Game />
     </Wrapper>
   );
 }
