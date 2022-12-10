@@ -1,17 +1,23 @@
-import { Game, Header } from "components";
+import { Game, Header, Rules } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
 function App() {
   const [score, setScore] = useState<number>(0);
+  const [showRules, setShowRules] = useState<boolean>(false);
 
   return (
     <Wrapper>
       <Header score={score} />
       <Game />
-      <Rules>
+      <RulesBtn
+        onClick={() => {
+          setShowRules(true);
+        }}
+      >
         <ButtonText>rules</ButtonText>
-      </Rules>
+      </RulesBtn>
+      {showRules ? <Rules setShowRules={setShowRules} /> : null}
     </Wrapper>
   );
 }
@@ -33,13 +39,20 @@ const Wrapper = styled.div`
   );
 `;
 
-const Rules = styled.button`
+const RulesBtn = styled.button`
   width: 128px;
   height: 48px;
   border: 1px solid white;
   background-color: transparent;
   margin-top: auto;
   border-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(0deg, #f3f3f3 0%, #ffffff 100%);
+  }
+  &:hover span {
+    color: #3b4262;
+  }
 `;
 
 const ButtonText = styled.span`

@@ -30,6 +30,10 @@ const HeaderElement = styled.header`
   align-items: center;
   padding-left: 24px;
   padding-right: 12px;
+  @media (min-width: 768px) {
+    width: 700px;
+    height: 150px;
+  }
 `;
 
 const Texts = styled.div`
@@ -52,6 +56,10 @@ const ScoreBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (min-width: 768px) {
+    width: 150px;
+    height: 114px;
+  }
 `;
 
 const ScoreText = styled.h3`
@@ -61,6 +69,11 @@ const ScoreText = styled.h3`
   letter-spacing: 1.56px;
   color: #2a45c2;
   text-transform: uppercase;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 2.5px;
+  }
 `;
 
 const Score = styled.h1`
@@ -68,4 +81,8 @@ const Score = styled.h1`
   font-weight: 700;
   line-height: 40px;
   color: #565468;
+  @media (min-width: 768px) {
+    font-size: 64px;
+    line-height: 64px;
+  }
 `;

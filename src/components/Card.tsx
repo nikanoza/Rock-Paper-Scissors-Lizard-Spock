@@ -3,8 +3,8 @@ import { GameCard } from "types";
 
 const Card: React.FC<{ item: GameCard }> = (props) => {
   return (
-    <CardBox bgColor={props.item.colorBottom}>
-      <MainCircle bgColor={props.item.colorTop}>
+    <CardBox bgColor={props.item.colorBottom} hover={props.item.colorTop}>
+      <MainCircle bgColor={props.item.colorTop} hover={props.item.colorTop}>
         <GrayCircle>
           <WhiteCircle>{props.item.image}</WhiteCircle>
         </GrayCircle>
@@ -16,17 +16,24 @@ const Card: React.FC<{ item: GameCard }> = (props) => {
 export default Card;
 
 const CardBox = styled.div(
-  (props: { bgColor: string }) => `
+  (props: { bgColor: string; hover: string }) => `
     width: 96px;
     height: 96px;
     border-radius: 50%;
     background-color: ${props.bgColor};
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+    cursor:pointer;
+    &:hover ${WhiteCircle}{
+      background: #3B4262;
+    };
+    &:hover path {
+      fill: ${props.hover};
+    };
 `
 );
 
 const MainCircle = styled(CardBox)(
-  (props: { bgColor: string }) => `
+  (props: { bgColor: string; hover: string }) => `
     height: 92.7px;
     background-color: ${props.bgColor};
     display: flex;
