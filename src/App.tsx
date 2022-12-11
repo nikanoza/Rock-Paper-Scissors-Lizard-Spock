@@ -1,17 +1,25 @@
 import { Game, Header, Rules, Versus } from "components";
 import { useState } from "react";
 import styled from "styled-components";
-import { Choice } from "types";
+import { GameCard } from "types";
 
 function App() {
   const [score, setScore] = useState<number>(0);
   const [showRules, setShowRules] = useState<boolean>(false);
-  const [userChoice, setUserChoice] = useState<Choice>("");
+  const [userChoice, setUserChoice] = useState<GameCard | null>(null);
 
   return (
     <Wrapper>
       <Header score={score} />
-      {userChoice !== "" ? <Versus /> : <Game />}
+      {userChoice ? (
+        <Versus
+          user={userChoice}
+          setScore={setScore}
+          setUserChoice={setUserChoice}
+        />
+      ) : (
+        <Game setUserChoice={setUserChoice} />
+      )}
       <RulesBtn
         onClick={() => {
           setShowRules(true);

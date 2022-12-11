@@ -10,3 +10,13 @@ html,body{
   height: 100%;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
+
+@keyframes picked {
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes again {
+  
+}

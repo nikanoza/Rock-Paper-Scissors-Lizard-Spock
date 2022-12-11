@@ -4,52 +4,54 @@ import { Lizard, Paper, Rock, Scissors, Spock } from "svg";
 import { GameCard } from "types";
 import Card from "./Card";
 
-const Game = () => {
-  const scissors: GameCard = {
-    name: "scissors",
-    image: <Scissors />,
-    colorTop: "#EB9F0E",
-    colorBottom: "#C76C1B",
-  };
+export const scissors: GameCard = {
+  name: "scissors",
+  image: <Scissors />,
+  colorTop: "#EB9F0E",
+  colorBottom: "#C76C1B",
+};
 
-  const spock: GameCard = {
-    name: "spock",
-    image: <Spock />,
-    colorTop: "#3FB7CD",
-    colorBottom: "#2D8DAB",
-  };
+export const spock: GameCard = {
+  name: "spock",
+  image: <Spock />,
+  colorTop: "#3FB7CD",
+  colorBottom: "#2D8DAB",
+};
 
-  const paper: GameCard = {
-    name: "paper",
-    image: <Paper />,
-    colorTop: "#4664F4",
-    colorBottom: "#2A45C2",
-  };
+export const paper: GameCard = {
+  name: "paper",
+  image: <Paper />,
+  colorTop: "#4664F4",
+  colorBottom: "#2A45C2",
+};
 
-  const lizard: GameCard = {
-    name: "lizard",
-    image: <Lizard />,
-    colorTop: "#834EE3",
-    colorBottom: "#5F37A8",
-  };
+export const lizard: GameCard = {
+  name: "lizard",
+  image: <Lizard />,
+  colorTop: "#834EE3",
+  colorBottom: "#5F37A8",
+};
 
-  const rock: GameCard = {
-    name: "rock",
-    image: <Rock />,
-    colorTop: "#DB2E4D",
-    colorBottom: "#9D1634",
-  };
+export const rock: GameCard = {
+  name: "rock",
+  image: <Rock />,
+  colorTop: "#DB2E4D",
+  colorBottom: "#9D1634",
+};
 
+const Game: React.FC<{ setUserChoice: (choice: GameCard) => void }> = (
+  props
+) => {
   return (
     <GameBox>
-      <Card item={scissors} />
+      <Card item={scissors} onClick={() => props.setUserChoice(scissors)} />
       <Middle>
-        <Card item={spock} />
-        <Card item={paper} />
+        <Card item={spock} onClick={() => props.setUserChoice(spock)} />
+        <Card item={paper} onClick={() => props.setUserChoice(paper)} />
       </Middle>
       <Bottom>
-        <Card item={lizard} />
-        <Card item={rock} />
+        <Card item={lizard} onClick={() => props.setUserChoice(lizard)} />
+        <Card item={rock} onClick={() => props.setUserChoice(rock)} />
       </Bottom>
     </GameBox>
   );

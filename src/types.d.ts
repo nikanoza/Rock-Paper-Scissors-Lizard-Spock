@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
+export type Choice = "scissors" | "spock" | "paper" | "lizard" | "rock" | "";
+
 export type GameCard = {
   image: ReactNode;
-  name: string;
+  name: Choice;
   colorTop: string;
   colorBottom: string;
 };
-
-export type Choice = "scissors" | "spock" | "paper" | "lizard" | "rock" | "";

@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { GameCard } from "types";
 
-const Card: React.FC<{ item: GameCard }> = (props) => {
+const Card: React.FC<{ item: GameCard; onClick?: () => void }> = (props) => {
   return (
-    <CardBox bgColor={props.item.colorBottom} hover={props.item.colorTop}>
+    <CardBox
+      bgColor={props.item.colorBottom}
+      hover={props.item.colorTop}
+      onClick={props.onClick}
+    >
       <MainCircle bgColor={props.item.colorTop} hover={props.item.colorTop}>
         <GrayCircle>
           <WhiteCircle>{props.item.image}</WhiteCircle>
