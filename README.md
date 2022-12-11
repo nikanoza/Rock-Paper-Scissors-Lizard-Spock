@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+![This is header image](/public/favicon.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rock,Paper,Scissors,Lizard and Spock Game
 
-## Available Scripts
+### Table of Contents
 
-In the project directory, you can run:
+- [Prerequisites](#Prerequisites)
+- [Tech Stack](#Tech-Stack)
+- [Getting Started](#Getting-Started)
+- [Project Structure](#Project-Structure)
+- [Deployment](#Deployment)
+- [Resources](#Resources)
 
-### `npm start`
+#
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- <img src="readme/nodejs.png" width="25" style="top: 8px" /> Node JS @16.X and up
+- <img src="readme/npm.png" width="25" style="top: 8px" /> npm @8 and up
+- <img src="readme/typescript.png" width="25" style="top: 8px" /> typescript @4.9.4 and up
 
-### `npm test`
+#
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Stack
 
-### `npm run build`
+- <img src="readme/react.png" width="25" style="top: 8px" /> React @18.2.0 - front-end framework
+- <img src="readme/styled-components.png" width="25" style="top: 8px" /> Styled-components @5.3.6 - visual primitives for the component age
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. First of all you need to clone app repository from github:
 
-### `npm run eject`
+```
+git clone https://github.com/nikanoza/Rock-Paper-Scissors-Lizard-Spock.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Next step requires install all the dependencies.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. To see project in action
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm start
+```
 
-## Learn More
+#
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+|--- src
+|   |--- components # reusable components
+|   |---|--- index.ts # export all components
+|   |--- images #assets folder for images
+|   |--- svg # svg components folder
+- package.json     # dependency manager configurations
+```
+
+#
+
+### Deployment
+
+Before every deployment you need to create build file.
+
+```
+npm run build
+```
+
+after this you can use this file to deploy project on server.
+
+#
+
+### Resources
+
+- [figma](https://www.figma.com/file/HEDEoGvPs7o0Hl7eimthPP/rock-paper-scissors?node-id=0%3A912&t=vvDODnX4iuHSkTyT-0).
+- [challenge](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH).
