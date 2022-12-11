@@ -18,5 +18,11 @@ html,body{
 }
 
 @keyframes again {
-  
+  95%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    width: 220px;
+  }
 }

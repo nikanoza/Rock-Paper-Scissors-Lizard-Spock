@@ -6,6 +6,7 @@ import Card from "./Card";
 
 const Versus: React.FC<{
   user: GameCard | null;
+  score: number;
   setScore: Dispatch<SetStateAction<number>>;
   setUserChoice: (param: null) => void;
 }> = (props) => {
@@ -25,7 +26,10 @@ const Versus: React.FC<{
         if (check === "win") {
           props.setScore((num) => num + 1);
         }
-      }, 4000);
+        if (check === "lose" && props.score > 0) {
+          props.setScore((num) => num - 1);
+        }
+      }, 2000);
     }
   }, [house, props, props.user?.name, result]);
 
@@ -33,10 +37,31 @@ const Versus: React.FC<{
     <VersusContainer>
       <SideBoxes>
         <Side>
+          <PickedDesktop>you picked</PickedDesktop>
           {props.user ? <Card item={props.user} /> : null}
           <PickedMobile>you picked</PickedMobile>
         </Side>
+        {result ? (
+          <ResultBoxDesktop>
+            <ResultText>
+              {result === "win"
+                ? "you win"
+                : result === "lose"
+                ? "you lose"
+                : "draw"}
+            </ResultText>
+            <Again
+              result={result}
+              onClick={() => {
+                props.setUserChoice(null);
+              }}
+            >
+              play again
+            </Again>
+          </ResultBoxDesktop>
+        ) : null}
         <Side>
+          <PickedDesktop>the house picked</PickedDesktop>
           <AnimatedPicked>
             {house ? <Card item={house} /> : null}
           </AnimatedPicked>
@@ -100,12 +125,29 @@ const PickedMobile = styled.h3`
   letter-spacing: 1.88px;
   color: white;
   margin-top: 17px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const PickedDesktop = styled.h3`
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 3px;
+  color: white;
+  display: none;
+  margin-bottom: 63px;
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 const AnimatedPicked = styled.div`
   opacity: 0;
   z-index: 2;
-  animation: picked 3s forwards;
+  animation: picked 1s forwards;
   animation-delay: 1s;
 `;
 
@@ -119,6 +161,9 @@ const Circle = styled.div`
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.1);
+  @media (min-width: 768px) {
+    top: 135px;
+  }
 `;
 
 const ResultBoxMobile = styled.div`
@@ -126,6 +171,21 @@ const ResultBoxMobile = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 62px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const ResultBoxDesktop = styled.div`
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 0;
+  opacity: 0;
+  animation: again 2s forwards;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const ResultText = styled.h1`

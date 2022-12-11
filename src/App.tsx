@@ -14,6 +14,7 @@ function App() {
       {userChoice ? (
         <Versus
           user={userChoice}
+          score={score}
           setScore={setScore}
           setUserChoice={setUserChoice}
         />
