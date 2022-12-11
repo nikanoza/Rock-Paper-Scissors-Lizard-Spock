@@ -1,4 +1,4 @@
-![This is header image](/public/favicon.png)
+![This is header image](/public/favicon.ico)
 
 # Rock,Paper,Scissors,Lizard and Spock Game
 
